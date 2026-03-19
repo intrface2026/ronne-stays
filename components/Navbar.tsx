@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 
@@ -54,9 +55,9 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => navigateOrScroll('#home', pathname, router)}
-            className="text-2xl font-serif font-bold text-gray-900 tracking-tight hover:opacity-80 transition-opacity duration-200"
+            className="flex items-center gap-2 hover:opacity-80 transition-opacity duration-200"
           >
-          Ronne Stays
+            <Image src="/7.png" alt="Ronne Stays Logo" width={80} height={80} className="w-14 h-14 md:w-16 md:h-16 object-contain" priority />
         </button>
 
         {/* Desktop Menu */}
@@ -102,7 +103,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => navigateOrScroll('#properties-section', pathname, router)}
-            className="flex items-center gap-2 bg-black text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-gray-800 transition-all"
+            className="flex items-center gap-2 bg-ronne-green text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-ronne-green-dark transition-all"
           >
             Book Now
             <div className="bg-white/20 rounded-full p-0.5">
@@ -156,7 +157,7 @@ export default function Navbar() {
                   navigateOrScroll('#properties-section', pathname, router);
                   setIsOpen(false);
                 }}
-                className="w-full py-3 bg-black text-white rounded-full font-medium"
+                className="w-full py-3 bg-ronne-green hover:bg-ronne-green-dark text-white rounded-full font-medium transition-colors"
               >
                 Book Now
               </button>

@@ -47,7 +47,7 @@ body {
 /* Premium button base – use with motion or transition */
 @layer components {
   .btn-primary {
-    @apply bg-gray-900 text-white rounded-full font-medium inline-flex items-center justify-center gap-2;
+    @apply bg-ronne-green text-white rounded-full font-medium inline-flex items-center justify-center gap-2;
     @apply shadow-lg shadow-black/10 hover:shadow-xl hover:shadow-black/15;
     @apply transition-all duration-300 ease-[var(--ease-out-expo)];
   }
@@ -56,13 +56,13 @@ body {
   }
   .btn-outline {
     @apply border border-gray-200 text-gray-500 rounded-full font-medium;
-    @apply hover:border-gray-900 hover:text-gray-900 transition-all duration-300;
+    @apply hover:border-ronne-green hover:text-ronne-green transition-all duration-300;
   }
   .btn-outline.active {
-    @apply border-gray-900 bg-gray-900 text-white;
+    @apply border-ronne-green bg-ronne-green text-white;
   }
   .link-arrow {
-    @apply font-medium text-gray-700 hover:text-gray-900 inline-flex items-center gap-1;
+    @apply font-medium text-gray-700 hover:text-ronne-green inline-flex items-center gap-1;
     @apply transition-colors duration-200;
   }
 }

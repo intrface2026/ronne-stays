@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Twitter, Instagram, Linkedin, Globe, ArrowRight } from 'lucide-react';
 import EnquiryForm from '@/components/EnquiryForm';
 
@@ -9,8 +10,9 @@ const Footer = () => {
 
 
         {/* Big Text */}
-        <div className="relative py-12 border-t border-gray-100">
-           <h1 className="text-[12vw] leading-[0.8] font-serif tracking-tighter text-center uppercase text-gray-900">
+        <div className="relative py-12 border-t border-gray-100 flex flex-col items-center justify-center gap-6">
+           <Image src="/1.png" alt="Ronne Stays Logo" width={120} height={120} className="w-24 h-24 md:w-32 md:h-32 object-contain" />
+           <h1 className="text-[12vw] leading-[0.8] font-serif tracking-tighter text-center uppercase text-ronne-green opacity-90">
               Ronne Stays
            </h1>
            
@@ -20,7 +22,7 @@ const Footer = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12 text-sm">
            <div className="col-span-2 md:col-span-1">
-              <div className="text-2xl font-serif font-bold mb-4">Ronne Stays.</div>
+              <div className="text-2xl font-serif font-bold mb-4 text-ronne-green">Ronne Stays.</div>
               <p className="text-gray-500 w-3/4">North Goa, India</p>
            </div>
            
