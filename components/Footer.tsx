@@ -12,9 +12,6 @@ const Footer = () => {
         {/* Big Text */}
         <div className="relative py-12 border-t border-gray-100 flex flex-col items-center justify-center gap-6">
            <Image src="/7.png" alt="Ronne Stays Logo" width={200} height={200} className="w-32 h-32 md:w-48 md:h-48 object-contain" />
-           <h1 className="text-[12vw] leading-[0.8] font-serif tracking-tighter text-center uppercase text-ronne-green opacity-90">
-              Ronne Stays
-           </h1>
            
            {/* Floating Image Over Text */}
            {/* Removed floating image as per request */}

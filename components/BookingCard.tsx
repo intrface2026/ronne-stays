@@ -10,13 +10,8 @@ type Props = {
   maxGuests: number;
 };
 
-const formatINR = (value: string | number) => {
-  if (typeof value === 'string') {
-    const num = Number(String(value).replace(/[^\d.]/g, ''));
-    if (Number.isFinite(num)) return formatINR(num);
-    return value;
-  }
-  return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(value);
+const formatINR = (value: number | string): string => {
+  return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(Number(value));
 };
 
 const diffNights = (checkIn: string, checkOut: string) => {
@@ -170,7 +165,7 @@ export default function BookingCard({ propertyId, propertyName, pricePerNight, m
         type="button"
         onClick={onReserve}
         disabled={loading}
-        className="w-full inline-flex items-center justify-center rounded-2xl bg-gray-900 text-white py-3.5 text-sm font-medium hover:bg-black transition-colors disabled:opacity-60 disabled:hover:bg-gray-900"
+        className="w-full inline-flex items-center justify-center rounded-2xl bg-ronne-green text-white py-3.5 text-sm font-medium hover:bg-ronne-green-dark transition-colors disabled:opacity-60 disabled:hover:bg-ronne-green"
       >
         {loading ? 'Reserving…' : 'Reserve'}
       </button>

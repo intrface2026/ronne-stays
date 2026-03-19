@@ -113,7 +113,7 @@ export function DateRangeCalendar({
                   outside ? 'text-gray-300' : 'text-gray-900',
                   disabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-100',
                   inside ? 'bg-gray-100' : '',
-                  isStart || isEnd ? 'bg-gray-900 text-white hover:bg-black' : '',
+                  isStart || isEnd ? 'bg-ronne-green text-white hover:bg-ronne-green-dark' : '',
                 ]
                   .filter(Boolean)
                   .join(' ')}

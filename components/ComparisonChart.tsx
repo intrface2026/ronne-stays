@@ -58,7 +58,7 @@ const ComparisonChart = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="bg-black rounded-[2rem] p-8 md:p-12 text-white relative overflow-hidden"
+            className="bg-ronne-green-dark rounded-[2rem] p-8 md:p-12 text-white relative overflow-hidden"
           >
             <div className="flex items-center gap-4 mb-8">
                <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center text-white">

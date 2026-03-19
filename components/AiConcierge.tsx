@@ -32,7 +32,7 @@ const AiConcierge = () => {
   };
 
   return (
-    <section className="py-20 px-6 bg-black text-white overflow-hidden relative">
+    <section className="py-20 px-6 bg-ronne-green-dark text-white overflow-hidden relative" id="ai-concierge">
       {/* Abstract Background Shapes */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gray-800 rounded-full blur-[120px] opacity-30 -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-900 rounded-full blur-[100px] opacity-20 translate-y-1/3 -translate-x-1/3 pointer-events-none"></div>
@@ -67,7 +67,7 @@ const AiConcierge = () => {
               <button 
                 type="submit" 
                 disabled={status === LoadingState.ANALYZING}
-                className="absolute right-2 bg-white text-black p-3 rounded-full hover:bg-gray-200 transition-colors disabled:opacity-50"
+                className="absolute right-2 bg-ronne-gold text-white p-3 rounded-full hover:brightness-110 transition-all disabled:opacity-50"
               >
                 {status === LoadingState.ANALYZING ? <Loader2 className="w-5 h-5 animate-spin"/> : <Send className="w-5 h-5" />}
               </button>
@@ -80,10 +80,10 @@ const AiConcierge = () => {
                 initial={{ opacity: 0, y: 10, height: 0 }}
                 animate={{ opacity: 1, y: 0, height: 'auto' }}
                 exit={{ opacity: 0, height: 0 }}
-                className="mt-8 text-left bg-gray-900/50 border border-white/10 rounded-2xl p-8"
+                className="mt-8 text-left bg-white/5 border border-white/20 rounded-2xl p-8"
               >
                 <div className="flex gap-4 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center shrink-0 font-serif font-bold">R</div>
+                  <div className="w-10 h-10 rounded-full bg-white text-ronne-green-dark flex items-center justify-center shrink-0 font-serif font-bold">R</div>
                   <div>
                     <p className="text-gray-200 leading-relaxed text-lg">{response.answer}</p>
                   </div>

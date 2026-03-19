@@ -162,7 +162,7 @@ const Properties = () => {
                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide">
                   {property.location}
                 </div>
-                <div className="absolute bottom-4 right-4 bg-black/80 backdrop-blur text-white px-4 py-2 rounded-full text-sm font-medium">
+                <div className="absolute bottom-4 right-4 bg-ronne-green/90 backdrop-blur text-white px-4 py-2 rounded-full text-sm font-medium">
                   {formatPricePerNight(property.pricePerNight)}
                 </div>
               </div>

@@ -185,7 +185,7 @@ const Features = () => {
                   onClick={() => setActiveLocation(loc)}
                   className={`px-3 py-1 rounded-full text-xs font-medium transition-all duration-300 ${
                     activeLocation === loc 
-                      ? 'bg-black text-white shadow-md' 
+                      ? 'bg-ronne-green text-white shadow-md' 
                       : 'border border-gray-200 bg-gray-100 text-gray-600 hover:bg-gray-200 cursor-pointer'
                   }`}
                 >

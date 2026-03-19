@@ -1,0 +1,9 @@
+import { PrismaClient } from '@prisma/client'
+
+// Use a singleton pattern to prevent instantiating multiple Prisma clients.
+// This is critical in hot-reloading environments and generally good practice.
+const globalForPrisma = globalThis as unknown as { prisma: PrismaClient }
+
+export const prisma = globalForPrisma.prisma || new PrismaClient()
+
+if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma

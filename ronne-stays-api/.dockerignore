@@ -1,0 +1,45 @@
+# Dependencies — reinstalled in container via npm ci
+node_modules/
+
+# Secrets — injected at runtime as Fly secrets
+.env
+.env.*
+
+# TypeScript source — compiled to dist/ at build time
+src/
+
+# Compiled output — rebuilt in container
+dist/
+
+# Dev/debug scripts — not needed at runtime
+src/scripts/seed-admin.ts
+scripts/
+
+# Prisma seed — only for local dev, not production image
+prisma/seed.ts
+
+# Log files
+*.log
+err.txt
+gen-log.txt
+gen-verbose.log
+out-utf8.log
+out.log
+prisma-log-utf8.txt
+prisma-log.txt
+test-log.txt
+
+# Diagnostic/test scripts
+diagnostic.ts
+test-prisma.js
+test-simple.js
+
+# Editor/OS noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Git
+.git/
+.gitignore

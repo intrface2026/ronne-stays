@@ -84,7 +84,7 @@ export default function EnquiryForm() {
         <button
           type="submit"
           disabled={loading}
-          className="mt-4 w-full inline-flex items-center justify-center rounded-2xl bg-gray-900 text-white py-3.5 text-sm font-medium hover:bg-black transition-colors disabled:opacity-60 disabled:hover:bg-gray-900"
+          className="mt-4 w-full inline-flex items-center justify-center rounded-2xl bg-ronne-green text-white py-3.5 text-sm font-medium hover:bg-ronne-green-dark transition-colors disabled:opacity-60 disabled:hover:bg-ronne-green"
         >
           {loading ? 'Sending…' : 'Send message'}
         </button>

@@ -1,0 +1,52 @@
+{
+  "name": "ronne-stays-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "nodemon src/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "prisma": {
+    "seed": "ts-node --transpile-only prisma/seed.ts"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.5.0",
+    "@prisma/client": "^7.5.0",
+    "bcryptjs": "^3.0.3",
+    "cloudinary": "^2.9.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.3.1",
+    "express-slow-down": "^3.1.0",
+    "express-validator": "^7.3.1",
+    "helmet": "^8.1.0",
+    "hpp": "^0.2.3",
+    "jsonwebtoken": "^9.0.3",
+    "multer": "^2.1.1",
+    "nanoid": "^5.1.7",
+    "pg": "^8.20.0",
+    "prisma": "^7.5.0",
+    "resend": "^6.9.4",
+    "xss-clean": "^0.1.4"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/express": "^5.0.6",
+    "@types/hpp": "^0.2.7",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/multer": "^2.1.0",
+    "@types/node": "^25.5.0",
+    "@types/pg": "^8.18.0",
+    "nodemon": "^3.1.14",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

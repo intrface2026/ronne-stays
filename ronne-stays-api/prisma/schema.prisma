@@ -1,0 +1,115 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Property {
+  id            String          @id @default(uuid())
+  name          String
+  slug          String          @unique
+  type          PropertyType
+  category      PropertyCategory?
+  location      String
+  pricePerNight Decimal         @db.Decimal(10, 2)
+  maxGuests     Int
+  bedrooms      Int
+  description   String?
+  isActive      Boolean         @default(true)
+  isFeatured    Boolean         @default(false)
+  unitCount     Int             @default(1)
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+
+  images        PropertyImage[]
+  amenities     PropertyAmenity[]
+  enquiries     Enquiry[]
+}
+
+enum PropertyType {
+  BHK_1
+  BHK_2
+  VILLA
+}
+
+enum PropertyCategory {
+  BEACHFRONT
+  MOUNTAIN
+  CITY
+  COUNTRYSIDE
+}
+
+model PropertyImage {
+  id         String   @id @default(uuid())
+  propertyId String
+  url        String
+  publicId   String   // Cloudinary public_id — required for deletion
+  isPrimary  Boolean  @default(false)
+  sortOrder  Int      @default(0)
+  createdAt  DateTime @default(now())
+
+  property   Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+
+  @@index([propertyId])
+}
+
+model Amenity {
+  id         String            @id @default(uuid())
+  name       String            @unique
+  icon       String?
+  createdAt  DateTime          @default(now())
+  properties PropertyAmenity[]
+}
+
+model PropertyAmenity {
+  propertyId String
+  amenityId  String
+  property   Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  amenity    Amenity  @relation(fields: [amenityId], references: [id], onDelete: Cascade)
+
+  @@id([propertyId, amenityId])
+}
+
+model Enquiry {
+  id           String        @id @default(uuid())
+  name         String
+  email        String
+  phone        String?
+  propertyId   String?
+  checkInDate  DateTime?
+  checkOutDate DateTime?
+  guests       Int?
+  message      String
+  status       EnquiryStatus @default(NEW)
+  ipAddress    String?
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  property     Property?     @relation(fields: [propertyId], references: [id])
+
+  @@index([propertyId])
+  @@index([status])
+}
+
+enum EnquiryStatus {
+  NEW
+  READ
+  RESPONDED
+  CLOSED
+}
+
+model Admin {
+  id                  String    @id @default(uuid())
+  email               String    @unique
+  passwordHash        String
+  name                String
+  failedLoginAttempts Int       @default(0)
+  lockedUntil         DateTime?
+  lastLoginAt         DateTime?
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+}
