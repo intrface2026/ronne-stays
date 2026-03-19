@@ -45,19 +45,19 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 h-20 md:h-28 flex items-center ${
         scrolled
-          ? 'bg-white/90 backdrop-blur-md border-b border-gray-100 py-3'
-          : 'bg-transparent py-6'
+          ? 'bg-white/90 backdrop-blur-md border-b border-gray-100'
+          : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-6 lg:px-12 flex justify-between items-center">
+      <div className="container mx-auto px-6 lg:px-12 flex justify-between items-center w-full">
           <button
             type="button"
             onClick={() => navigateOrScroll('#home', pathname, router)}
             className="flex items-center gap-2 hover:opacity-80 transition-opacity duration-200"
           >
-            <Image src="/7.png" alt="Ronne Stays Logo" width={80} height={80} className="w-14 h-14 md:w-16 md:h-16 object-contain" priority />
+            <Image src="/7.png" alt="Ronne Stays Logo" width={240} height={240} className="w-auto h-16 md:h-24 object-contain scale-110 md:scale-[1.35] origin-left" priority />
         </button>
 
         {/* Desktop Menu */}
